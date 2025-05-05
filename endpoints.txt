@@ -1,0 +1,67 @@
+الأماكن من الإسماعيليه :
+GET http://localhost:3000/api/places/google-places
+
+---------------------------------------------------------------------------
+
+الأماكن المخزنة:
+GET http://localhost:3000/api/places
+
+---------------------------------------------------------------------------
+
+انشاء مكان جديد:
+POST 
+http://localhost:3000/api/places
+Content-Type: application/json
+
+{
+  "name": "Starbucks",
+  "category": "cafe",
+  "longitude": 32.2723,
+  "latitude": 30.6043
+}
+
+---------------------------------------------------------------------------
+
+تحديث مكان :
+
+Requist
+PUT 
+http://localhost:3000/api/places/6819011baaa5278770cfeae3
+
+Header
+Content-Type: application/json
+
+body=> raw
+{
+  "category": "cafe"
+}
+
+---------------------------------------------------------------------------
+
+ايجاد اقرب 5 اماكن :
+GET 
+http://localhost:3000/api/places/nearby?longitude=32.2764809&latitude=30.5964152&category=cafe&radius=5
+
+Header
+Content-Type: application/json
+
+---------------------------------------------------------------------------
+
+تحويل العنوان الي احداثيات :
+GET 
+http://localhost:3000/api/places/geocode?address=Ismailia,+Egypt
+
+---------------------------------------------------------------------------
+
+جلب مكان بالـ ID :
+GET http://localhost:3000/api/places/6818f961aaa5278770cfea6f
+
+---------------------------------------------------------------------------
+
+حذف مكان :
+DELETE http://localhost:3000/api/places/6818f961aaa5278770cfea76
+
+---------------------------------------------------------------------------
+
+ايجاد المسافه بين مكانين:
+GET http://localhost:3000/api/places/distance/6813eac7aaa5278770cfe828?longitude=32.2737531&latitude=30.6046887
